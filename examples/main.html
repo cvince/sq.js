@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<style type="text/css">
+			.box{
+				background:#ff0000;
+				border: 1px solid #000;
+				width: 200px;
+				height: 200px;
+				position: relative;
+				float: left;
+			}
+
+			.blue{
+				background:#0000ff;
+			}
+
+
+		</style>
+	</head>
+
+	<body>
+
+		<div id="ani1" class="box div1"></div>
+
+		<div id="ani2" class="box blue div2"></div>
+
+		<div id="ani3" class="box blue div3"></div>
+
+		<div id="ani4" class="box blue div4"></div>
+
+		<div id="ani5" class="box blue div5"></div>				
+
+
+	<script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
+	<script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
+	<script>
+
+	// function fadeSequence(list) {
+	//     var index = 0;
+	//     function next() {
+	//         if (index < list.length) {
+	//         	console.log(index);
+	//             $(list[index++]).fadeOut(next);
+	//         }
+	//     }
+	//     next();
+	// }
+
+	// var fades = [".div1", ".div2", ".div3", ".div4", ".div5"];
+	// fadeSequence(fades);
+
+
+	$('.div1').fadeOut('slow').promise().pipe(function() {
+	    $('.div2').fadeOut('slow');
+	}).pipe(function() {
+	    $('.div3').animate({ top: 500 }, 1000 );
+	});
+
+	</script>
+
+	<!--
+	<script src="../src/sq.js"></script>  -->
+	</body>
+
+</html>
